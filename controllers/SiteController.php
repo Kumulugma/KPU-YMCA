@@ -7,16 +7,18 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
-use app\models\LoginForm;
-use app\models\ContactForm;
+use app\models\MeasurementForm;
+use app\models\MeasurementModel;
+use yii\helpers\Html;
+use app\models\GendersModel;
+use yii\helpers\ArrayHelper;
 
-class SiteController extends Controller
-{
+class SiteController extends Controller {
+
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
-    {
+    public function behaviors() {
         return [
             'access' => [
                 'class' => AccessControl::className(),
@@ -41,8 +43,7 @@ class SiteController extends Controller
     /**
      * {@inheritdoc}
      */
-    public function actions()
-    {
+    public function actions() {
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
@@ -59,8 +60,7 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionIndex()
-    {
+    public function actionIndex() {
         return $this->render('index');
     }
 
@@ -69,18 +69,37 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionStatic()
-    {
-        return $this->render('static');
+    public function actionStatic() {
+        if (Yii::$app->request->post()) {
+            $input = Yii::createObject(MeasurementForm::className());
+            $input->load(Yii::$app->request->post(), 'MeasurementForm');
+            if ($input->validate()) {
+                $model = new MeasurementModel();
+                $model->gender_ID = $input->gender_ID;
+                $model->waist = $input->waist;
+                $model->body_weight = $input->body_weight;
+                $model->save();
+            } else {
+                $errors = $input->errors;
+                print_r($errors);
+            }
+        }
+
+        return $this->render('static', [
+                    'title' => Html::encode('Kalkulator statyczny'),
+                    'data' => new MeasurementForm(),
+                    'genders' => ArrayHelper::map(GendersModel::getGenders(), 'ID', 'name'),
+                    'model' => MeasurementModel::getMeasurements()
+        ]);
     }
-    
+
     /**
      * Displays about page.
      *
      * @return string
      */
-    public function actionAjax()
-    {
+    public function actionAjax() {
         return $this->render('ajax');
     }
+
 }

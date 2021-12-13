@@ -25,20 +25,14 @@ $this->title = 'Strona główna';
             <div class="col-lg-6">
                 <h2>Kalkulator statyczny</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+                <p>Kalkulator oparty o standardowy formularz z przeładowaniem strony przy zapisie.</p>
 
                 <p><a class="btn btn-outline-secondary" href="<?=Url::toRoute(Yii::$app->params['staticUrl']);?>">Otwórz</a></p>
             </div>
             <div class="col-lg-6">
                 <h2>Kalkulator Ajax</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+                <p>Kalkulator obsługujący wpisy bez odświeżania strony.</p>
 
                 <p><a class="btn btn-outline-secondary" href="<?=Url::toRoute(Yii::$app->params['ajaxUrl']);?>">Otwórz</a></p>
             </div>
