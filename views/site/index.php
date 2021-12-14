@@ -22,19 +22,17 @@ $this->title = 'Strona główna';
     <div class="body-content">
 
         <div class="row">
-            <div class="col-lg-6">
-                <h2>Kalkulator statyczny</h2>
+            <div class="col-lg-12">
+                <h2>Kalkulator</h2>
 
-                <p>Kalkulator oparty o standardowy formularz z przeładowaniem strony przy zapisie.</p>
+                <p>Można dzięki niemu obliczyć procentową zawartość tkanki tłuszczowej w organizmie. Do obliczenia wymaga zaledwie dwóch paratrów:<br>
+<br>
+    obwód pasa (talii – na wysokości pępka) – liczony w centymetrach,<br>
+    masę ciała – liczona w kilogramach.<br>
+<br>
+Wskaźnik ten wielokrotnie będzie wykładnikiem kondycji fizycznej i stanu zdrowia. Może on także posłużyć do monitorowania przebiegu diety oraz zmian w organizmie poddanym treningowi redukującemu zbędną tkankę tłuszczową.</p>
 
                 <p><a class="btn btn-outline-secondary" href="<?=Url::toRoute(Yii::$app->params['staticUrl']);?>">Otwórz</a></p>
-            </div>
-            <div class="col-lg-6">
-                <h2>Kalkulator Ajax</h2>
-
-                <p>Kalkulator obsługujący wpisy bez odświeżania strony.</p>
-
-                <p><a class="btn btn-outline-secondary" href="<?=Url::toRoute(Yii::$app->params['ajaxUrl']);?>">Otwórz</a></p>
             </div>
         </div>
 

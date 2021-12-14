@@ -16,7 +16,7 @@ class m211213_105345_add_genders extends Migration {
             'name' => $this->string(30)->notNull()
                 ], 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB');
 
-        $this->addForeignKey('{{%fk_measurement_genders}}', '{{%measurement}}', 'gender_ID', '{{%genders}}', 'ID', 'CASCADE', 'RESTRICT');
+        $this->addForeignKey('{{%fk_measurements_genders}}', '{{%measurements}}', 'gender_ID', '{{%genders}}', 'ID', 'CASCADE', 'RESTRICT');
         
         $this->insert('genders', [
             'ID' => '1',

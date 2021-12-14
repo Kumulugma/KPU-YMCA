@@ -5,7 +5,7 @@ $db = require __DIR__ . '/db.php';
 
 $config = [
     'id' => 'basic',
-    'name'=>'Kalkulator YMCA',
+    'name'=>'YMCA',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => [
@@ -57,7 +57,7 @@ $config = [
             'showScriptName'        => false,
             'enableStrictParsing'   => false,
             'rules' => [
-                // i only use default rules so this is empty
+                'site/edit/<id:\d+>' => 'site/edit',
             ],
         ],
     ],

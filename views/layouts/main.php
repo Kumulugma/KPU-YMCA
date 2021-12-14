@@ -37,8 +37,7 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav'],
         'items' => [
-            ['label' => 'Statyczny', 'url' => ['/site/static']],
-            ['label' => 'Ajax', 'url' => ['/site/ajax']]
+            ['label' => 'Kalkulator', 'url' => ['/site/static']]
         ],
     ]);
     NavBar::end();

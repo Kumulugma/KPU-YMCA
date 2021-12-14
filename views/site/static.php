@@ -4,7 +4,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-$this->title = 'Kalkulator statyczny';
+$this->title = 'Kalkulator';
 
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -21,6 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
             $form = ActiveForm::begin([
                         'id' => 'login-form',
                         'options' => ['class' => 'form-horizontal'],
+                        'action' =>['site/save']
                     ])
             ?>
             <?= $form->field($data, 'gender_ID')->radioList($genders); ?>
@@ -71,7 +72,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                         <p class="mb-0"><?=round($entry->doMath($entry), 2)?></p>
                                     </td>
                                     <td>
-                                        <a href="/site/static-edit/<?=$entry->ID?>" class="btn btn-sm btn-dark">Edytuj</a>
+                                        <a href="/site/edit/<?=$entry->ID?>" class="btn btn-sm btn-dark">Edytuj</a>
                                     </td>
                                 </tr>
                             <?php } ?>

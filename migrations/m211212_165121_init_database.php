@@ -11,7 +11,7 @@ class m211212_165121_init_database extends Migration {
      * {@inheritdoc}
      */
     public function up() {
-        $this->createTable('{{%measurement}}', [
+        $this->createTable('{{%measurements}}', [
             'ID' => $this->primaryKey(),
             'gender_ID' => $this->integer(30),
             'waist' => $this->string(30)->notNull(),
@@ -26,7 +26,7 @@ class m211212_165121_init_database extends Migration {
      * {@inheritdoc}
      */
     public function down() {
-        Yii::$app->db->createCommand()->dropTable('{{%measurement}}')->execute();
+        Yii::$app->db->createCommand()->dropTable('{{%measurements}}')->execute();
 
         return false;
     }
