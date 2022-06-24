@@ -1,3 +1,9 @@
+
+# NTP - Kalkulator YMCA
+
+![KPU Krosno](https://k3e.pl/wp-content/uploads/2022/04/Logo_2-1.png)
+------------------
+
 Praca zaliczeniowa z przedmiotu: Nowoczesne techniki programowanie
 
 INSTALACJA
